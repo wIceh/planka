@@ -44,10 +44,6 @@ COPY --from=server-dependencies --chown=node:node /app/node_modules node_modules
 COPY --from=client --chown=node:node /app/build public
 COPY --from=client --chown=node:node /app/build/index.html views/index.ejs
 
-VOLUME /app/public/user-avatars
-VOLUME /app/public/project-background-images
-VOLUME /app/private/attachments
-
 EXPOSE 1337
 
 HEALTHCHECK --interval=10s --timeout=2s --start-period=15s \
